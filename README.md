@@ -10,9 +10,9 @@ If you are considering learning a new language and didn't know what you want it 
 
 ### Uses Cases
 Decide 
-A vacation spot.
-A Movie to see.
-Location to visit in a new city.
+- A vacation spot.
+- A Movie to see.
+- Location to visit in a new city.
 
 
 **The name WAZO is from a Swahili word that means idea.**
