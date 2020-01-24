@@ -1,0 +1,16 @@
++ Page
+  + Leaderboard
+    + PostCards
+      - IdeaName
+      - IdeaCategory
+      - IdeaImages
+      + Counter
+      + Users
+        + Admin 
+          - Name 
+          - Avatar
+          - Password, etc
+        + Voters
+          - Name
+          - Avatar
+          - Password, etc
