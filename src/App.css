@@ -22,32 +22,43 @@ h1, h3 {
   padding-bottom: 20px;
 }
 
-.post-card {
+.postCard {
   background-color: rgb(243, 240, 240);
   display: flex;
   margin: 15px;
 }
 
-.right-card {
+.rightCard {
   margin-left: 25px;
 }
 
-.user-img {
+.userImg img {
   width: 50px;
   height: 50px;
   border-radius: 50px;
 }
 
-.idea-img {
+.ideaImg {
   width: 150px;
   height: 150px;
   margin-right: 25px;
   
 }
 
-.user-cat {
+.userCat {
   width: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+#triangle {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent rgb(7, 6, 6) transparent;
 }
