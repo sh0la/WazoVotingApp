@@ -1,16 +1,17 @@
 + Page
   + Leaderboard
     + PostCards
+      + Ideas
       - IdeaName
       - IdeaCategory
       - IdeaImages
-      + Counter
-      + Users
-        + Admin 
-          - Name 
-          - Avatar
-          - Password, etc
-        + Voters
-          - Name
-          - Avatar
-          - Password, etc
+    + Counter
+    + Users
+      + Admin 
+        - Name 
+        - Avatar
+        - Password, etc
+      + Voters
+        - Name
+        - Avatar
+        - Password, etc

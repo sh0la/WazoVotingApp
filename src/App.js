@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
+import Header from './Header';
+import Leaderboard from './Leaderboard';
+
+
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <h1>Hello Voters</h1>
-      </div>
+      <Header />
+      <Leaderboard />
     </div>
   );
 }

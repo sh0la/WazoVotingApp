@@ -1,0 +1,64 @@
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+  background-color: rgb(162, 183, 250);
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+main {
+  margin: 20px;
+  padding: 30px;
+}
+
+h1, h3 {
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.post-card {
+  background-color: rgb(243, 240, 240);
+  display: flex;
+  margin: 15px;
+}
+
+.right-card {
+  margin-left: 25px;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.idea-img {
+  width: 150px;
+  height: 150px;
+  margin-right: 25px;
+  
+}
+
+.user-cat {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#triangle {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent rgb(7, 6, 6) transparent;
+}
