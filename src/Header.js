@@ -5,7 +5,7 @@ function Header() {
     <header>
       <h1>Wazo</h1>
       <h3>Idea Voting App</h3>
-      <p>Get collaboration from friends(and foes) to decide your next fun Activity</p>
+      <p>Collaborate with friends(and foes) to decide your next fun Activity</p>
     </header>
   )
 }

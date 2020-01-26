@@ -13,7 +13,7 @@ class Cards extends Component {
       <section className="postCard">
         <IdeaImage />
         <div className="rightCard">
-          <CountVotes />
+          <CountVotes updateCount={this.props.sumVotes}/>
           <IdeaName />
           <IdeaCategory />
         </div>

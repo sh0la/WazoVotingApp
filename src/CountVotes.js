@@ -3,22 +3,29 @@ import React, { Component } from 'react';
 class CountVotes extends Component {
   constructor(props) {
     super(props);
-    this.state = {'counter': 0}
+    this.state = {counter: 0}
+
+    this.handleClick = this.handleClick.bind(this);
   }
   
-  handleClick() {
-    //this.setState({this.state.counter + 1})
+  handleClick(event) {
+    console.log(event)
+    this.handleCounter(this.state.counter)
+    
   }
 
   render() {
-    
+    //console.log(count)
     return (
     <div class="counter">
       <span id="triangle" 
-            onClick={this.handleClick}
+            onClick={this.handleClick} 
+            count={this.props.updateCount}
+            
+            
       >
       </span>
-        25 
+        {this.state.counter}
     </div>
     )
   }
