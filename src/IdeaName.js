@@ -1,8 +1,13 @@
 import React from 'react';
 
-function IdeaName() {
+function IdeaName(props) {
+  console.log(props.locationUrl)
   return(
-    <p className="ideaName">Product Name</p>
+    <a className="ideaName"
+       href={props.locationUrl} 
+    >
+      {props.locationName}
+    </a>
   )
 }
 
