@@ -5,6 +5,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 header{
   background-color: rgb(162, 183, 250);
   padding-bottom: 20px;
