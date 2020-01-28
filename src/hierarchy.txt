@@ -4,7 +4,7 @@
       + Ideas
       - IdeaName
       - IdeaCategory
-      - IdeaImages
+      - IdeaImage
     + Counter
     + Users
       + Admin 
