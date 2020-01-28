@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cards from './Cards';
+//import data from './voting-app-seed-data.js';
 
 class Leaderboard extends Component {
   constructor() {
@@ -13,11 +14,11 @@ class Leaderboard extends Component {
           counter: 0,
           url: 'https://travel.usnews.com/Paris_France/',
           //votes: CountVotes(),
-          submitterAvatarUrl: './images/boy.jpg',
-          productImageUrl: './images/cat.jpg',
+          submitterAvatarUrl: require('./images/boy.jpg'),
+          productImageUrl: require('./images/cat.jpg'),
           description: 'the black and red sands make for a memorable visit. Next up, indulge in the archaeological delights of the impressively preserved Ancient Akrotiri or hike to Ancient Thera to see the ruins of three empires.',
-          avatarUrl: './images/boy.jpg',
-          productImageUrl: './images/cat.jpg',
+          avatarUrl: require('./images/boy.jpg'),
+          productImageUrl: require('./images/bora-bora.jpeg'),
         },
         {
           id: 2,
@@ -25,11 +26,11 @@ class Leaderboard extends Component {
           counter: 0,
           url: 'https://travel.usnews.com/Bora_Bora/',
           //votes: CountVotes(),
-          submitterAvatarUrl: './images/girl.jpg',
-          productImageUrl: './images/cat.jpg',
+          submitterAvatarUrl: require('./images/girl.jpg'),
+          productImageUrl: require('./images/cat.jpg'),
           description: 'the black and red sands make for a memorable visit. Next up, indulge in the archaeological delights of the impressively preserved Ancient Akrotiri or hike to Ancient Thera to see the ruins of three empires.',
-          avatarUrl: './images/boy.jpg',
-          productImageUrl: './images/cat.jpg',
+          avatarUrl: require('./images/girl.jpg'),
+          productImageUrl: require('./images/cancun.jpg'),
         },
         {
           id: 3,
@@ -40,8 +41,8 @@ class Leaderboard extends Component {
           submitterAvatarUrl: './images/boy.jpg',
           productImageUrl: './images/cat.jpg',
           description: 'the black and red sands make for a memorable visit. Next up, indulge in the archaeological delights of the impressively preserved Ancient Akrotiri or hike to Ancient Thera to see the ruins of three empires.',
-          avatarUrl: './images/boy.jpg',
-          productImageUrl: './images/cat.jpg',
+          avatarUrl: require('../src/images/cat.jpg'),
+          productImageUrl: require('../src/images/rome.jpg'),
         },
         {
           id: 4,
@@ -49,28 +50,58 @@ class Leaderboard extends Component {
           counter: 33,
           url: 'https://travel.usnews.com/St_Lucia/',
           //votes: CountVotes(),
-          submitterAvatarUrl: './images/boy.jpg',
-          productImageUrl: './images/cat.jpg',
+          submitterAvatarUrl: './src/images/boy.jpg',
+          productImageUrl: './src/images/cat.jpg',
           description: 'the black and red sands make for a memorable visit. Next up, indulge in the archaeological delights of the impressively preserved Ancient Akrotiri or hike to Ancient Thera to see the ruins of three empires.',
-          avatarUrl: './images/boy.jpg',
-          productImageUrl: './images/cat.jpg',
+          avatarUrl: require('../src/images/girl.jpg'),
+          productImageUrl: require('../src/images/pantagonia.jpg'),
         }
       ]
     }
 
-    //this.state = {counter: 0}
+    this.activateClicks = this.activateClicks.bind(this)
+    //this.sortSpots = this.sortSpots.bind(this)
   }
 
-  handleCounter () {
-    this.setState({counter: this.state.vacationSpots.counter + 1})
+  activateClicks(newCounter, id) {
+
+    let newSpots = [...this.state.vacationSpots]
+
+    newSpots.forEach((spot) => {
+      if(spot.id === id) {
+        Object.assign(spot, {counter: newCounter})
+      }
+    })
+    this.setState({vacationSpots: newSpots})
+  }
+
+  sortSpots() {
+    let listOfSpots = this.state.vacationSpots.sort(
+    (a,b) => {
+      return (b.counter - a.counter)
+    }
+    );
+  
+    return (
+      listOfSpots.map(spot => {
+        return(
+          <main>
+            <Cards spots={spot}
+                   handleAllClicks={this.activateClicks}
+            />
+          </main>
+        )
+      })
+    )
   }
 
   render() {
-    console.log(this.state.vacationSpots)
+    console.log(this.state.vacationSpots[3].counter)
     return (
-      <main>
-        <Cards spots={this.state.vacationSpots}/>
-      </main>
+      <React.Fragment>
+        {this.sortSpots()}
+      </React.Fragment>
+      
     )
   }
 }
