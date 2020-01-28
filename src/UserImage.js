@@ -1,10 +1,11 @@
 import React from 'react';
 
-function UserImage() {
+function UserImage(props) {
   return(
     <div className="userImg">
       <span>Submitted by</span>
-      <img src={require("./images/girl.jpg")} 
+      <img //src={require("./images/girl.jpg")} 
+           src={props.avatarUrl}
            alt=""/>
     </div>
   )
