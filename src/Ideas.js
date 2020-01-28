@@ -4,7 +4,7 @@ function Ideas() {
   return(
     <div>
       <IdeaName />
-      <IdeaCategory />
+      <IdeaDescription />
       <IdeaImage />
     </div>
   )
