@@ -1,41 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import IdeaImage from './IdeaImage';
 import CountVotes from './CountVotes';
 import IdeaName from './IdeaName';
 import UserImage from './UserImage';
-import IdeaCategory from './IdeaCategory';
+import IdeaDescription from './IdeaDescription';
 
 
-function Cards(props) {
+class Cards extends Component {
 
-    console.log(props.spots)
-    const cards = props.spots.map((spot) => {
-      console.log(spot)
-      return (
+  constructor() {
+    super();
+    this.handleClickTransfer = this.handleClickTransfer.bind(this)
+  }
+    
+  handleClickTransfer() {
+    let sumClicks = this.props.spots.counter + 1;
+    this.props.handleAllClicks(sumClicks, this.props.spots.id)
+  }
+
+  render() {
+    const cards = 
         <section className="postCard">
-          <IdeaImage key={spot.id} productImage={spot.productImageUrl}/>
+          <IdeaImage productImage={this.props.spots.productImageUrl}/>
           <div className="rightCard">
-            <CountVotes updateCount={spot.counter}/>
-            <IdeaName key={spot.id} locationName={spot.location}
-                      locationUrl={spot.url}
+            <CountVotes updateCount={this.props.spots.counter}
+                        voteCounts={this.handleClickTransfer}
             />
-            <IdeaCategory key={spot.id} description={spot.description}/>
+            <IdeaName locationName={this.props.spots.location}
+                      locationUrl={this.props.spots.url}
+            />
+            <IdeaDescription description={this.props.spots.description}/>
           </div>
           <div>
-            <UserImage key={spot.id} avatarUrl={spot.avatarUrl}/>
+            <UserImage avatarUrl={this.props.spots.avatarUrl}/>
           </div>       
         </section>
-      )
-    })
-
-
-
+     
     return (
       <React.Fragment>
         {cards}
       </React.Fragment>
     )
   }
+}
 
 export default Cards;
 
